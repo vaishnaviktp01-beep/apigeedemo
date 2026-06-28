@@ -17,6 +17,19 @@
         <apigee.options>override</apigee.options>
     </properties>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>apigee-repo</id>
+            <name>Apigee Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <profiles>
         <!--
             Apigee X / Hybrid — eval environment
