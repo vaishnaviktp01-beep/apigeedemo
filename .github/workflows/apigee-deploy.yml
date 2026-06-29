@@ -32,12 +32,17 @@ jobs:
           export_environment_variables: true
           cleanup_credentials: false
 
+      - name: Generate OAuth2 Token
+        run: |
+          TOKEN=$(gcloud auth print-access-token)
+          echo "APIGEE_BEARER_TOKEN=$TOKEN" >> $GITHUB_ENV
+
       - name: Deploy to Apigee eval
         run: |
           mvn deploy -P eval -ntp \
             -Dapigee.org=${{ secrets.APIGEE_ORG }} \
             -Dapigee.env=eval \
-            -Dapigee.bearer=${{ secrets.GCP_SA_KEY }}
+            -Dapigee.bearer=${{ env.APIGEE_BEARER_TOKEN }}
             
 
       - name: Upload build artifacts
