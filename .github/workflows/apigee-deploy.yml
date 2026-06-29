@@ -35,6 +35,7 @@ jobs:
           mvn deploy -P eval -ntp \
             -Dapigee.org=${{ secrets.APIGEE_ORG }} \
             -Dapigee.env=eval
+            -Dapigee.serviceAccountKeyFile=$APIGEE_SERVICE_ACCOUNT_KEY
 
       - name: Upload build artifacts
         if: always()
