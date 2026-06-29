@@ -53,7 +53,7 @@
         <plugins>
             <plugin>
                 <groupId>io.apigee.build-tools.enterprise4g</groupId>
-                <artifactId>apigee-deploy-maven-plugin</artifactId>
+                <artifactId>apigee-edge-maven-plugin</artifactId>
                 <version>${apigee.plugin.version}</version>
                 <executions>
                     <execution>
