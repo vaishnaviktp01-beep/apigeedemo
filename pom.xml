@@ -50,6 +50,14 @@
         </profile>
     </profiles>
 
+    <distributionManagement>
+        <repository>
+            <id>apigee-releases</id>
+            <name>Apigee Releases</name>
+            <url>https://github.com/apigee/maven-plugins/raw/master/releases</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
                  <plugin>
