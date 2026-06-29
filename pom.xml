@@ -19,9 +19,12 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>apigee-repo</id>
-            <name>Apigee Repository</name>
-            <url>https://repo1.maven.org/maven2/</url>
+            <id>apigee-releases</id>
+            <name>Apigee Releases</name>
+            <url>https://github.com/apigee/maven-plugins/raw/master/releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </pluginRepository>
         <pluginRepository>
             <id>central</id>
