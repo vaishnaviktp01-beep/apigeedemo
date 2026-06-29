@@ -15,6 +15,7 @@
         <apigee.plugin.version>2.5.2</apigee.plugin.version>
         <!-- Override via -Dapigee.options=update to update existing without undeploying -->
         <apigee.options>override</apigee.options>
+        <apigee.serviceAccountKeyFile>${env.GOOGLE_APPLICATION_CREDENTIALS}</apigee.serviceAccountKeyFile>
     </properties>
 
     <pluginRepositories>
