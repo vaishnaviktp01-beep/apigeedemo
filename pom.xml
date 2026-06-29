@@ -77,20 +77,29 @@
             </plugin>
                  
            <plugin>
-                <groupId>io.apigee.build-tools.enterprise4g</groupId>
-                <artifactId>apigee-edge-maven-plugin</artifactId>
-                <version>${apigee.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>deploy-proxy</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>configure</goal>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+    <groupId>io.apigee.build-tools.enterprise4g</groupId>
+    <artifactId>apigee-edge-maven-plugin</artifactId>
+    <version>${apigee.plugin.version}</version>
+    <executions>
+        <execution>
+            <id>deploy-proxy</id>
+            <phase>install</phase>
+            <goals>
+                <goal>configure</goal>
+                <goal>deploy</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <apigee.org>${apigee.org}</apigee.org>
+        <apigee.env>${apigee.env}</apigee.env>
+        <apigee.api>${apigee.api}</apigee.api>
+        <apigee.hosturl>${apigee.hosturl}</apigee.hosturl>
+        <apigee.apiversion>${apigee.apiversion}</apigee.apiversion>
+        <apigee.serviceAccountKeyFile>${apigee.serviceAccountKeyFile}</apigee.serviceAccountKeyFile>
+        <apigee.options>${apigee.options}</apigee.options>
+    </configuration>
+</plugin>
         </plugins>
     </build>
 </project>
