@@ -76,22 +76,16 @@
                 </executions>
             </plugin>
                  
-            <plugin>
+           <plugin>
                 <groupId>io.apigee.build-tools.enterprise4g</groupId>
                 <artifactId>apigee-edge-maven-plugin</artifactId>
                 <version>${apigee.plugin.version}</version>
                 <executions>
                     <execution>
-                        <id>configure-bundle</id>
-                        <phase>package</phase>
+                        <id>deploy-proxy</id>
+                        <phase>install</phase>
                         <goals>
                             <goal>configure</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>deploy-bundle</id>
-                        <phase>deploy</phase>
-                        <goals>
                             <goal>deploy</goal>
                         </goals>
                     </execution>
