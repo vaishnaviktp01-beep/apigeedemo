@@ -12,7 +12,7 @@
     <name>Hello World API Proxy</name>
 
     <properties>
-        <apigee.plugin.version>2.4.4</apigee.plugin.version>
+        <apigee.plugin.version>2.5.2</apigee.plugin.version>
         <!-- Override via -Dapigee.options=update to update existing without undeploying -->
         <apigee.options>override</apigee.options>
     </properties>
