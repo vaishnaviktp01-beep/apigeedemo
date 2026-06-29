@@ -29,13 +29,15 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
+          export_environment_variables: true
+          cleanup_credentials: false
 
       - name: Deploy to Apigee eval
         run: |
           mvn deploy -P eval -ntp \
             -Dapigee.org=${{ secrets.APIGEE_ORG }} \
-            -Dapigee.env=eval \
-            -Dapigee.serviceAccountKeyFile=$GOOGLE_APPLICATION_CREDENTIALS
+            -Dapigee.env=eval 
+            
 
       - name: Upload build artifacts
         if: always()
