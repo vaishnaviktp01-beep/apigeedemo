@@ -36,7 +36,8 @@ jobs:
         run: |
           mvn deploy -P eval -ntp \
             -Dapigee.org=${{ secrets.APIGEE_ORG }} \
-            -Dapigee.env=eval 
+            -Dapigee.env=eval \
+            -Dapigee.bearer=${{ secrets.GCP_SA_KEY }}
             
 
       - name: Upload build artifacts
