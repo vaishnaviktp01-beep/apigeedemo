@@ -40,9 +40,17 @@ jobs:
       - name: Build Apigee proxy
         run: |
           mvn clean package -P eval -ntp
-
+          ls -la target/  # Debug: List all artifacts created
+    
       - name: Deploy to Apigee eval
         run: |
+        # Find the actual ZIP file created
+           ZIP_FILE=$(find target -name "*.zip" | head -1)
+          if [ -z "$ZIP_FILE" ]; then
+          echo "ERROR: No ZIP file found in target directory"
+          exit 1
+          fi
+
           mvn apigee-enterprise:deploy -P eval -ntp \
           -Dapigee.org=${{ secrets.APIGEE_ORG }} \
           -Dapigee.env=eval \
