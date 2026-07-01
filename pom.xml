@@ -35,20 +35,44 @@
     </pluginRepositories>
 
     <profiles>
-        <!--
-            Apigee X / Hybrid — eval environment
-            Usage: mvn deploy -P eval -Dapigee.org=YOUR_PROJECT -Dapigee.env=eval
-        -->
-        <profile>
-            <id>eval</id>
-            <properties>
-                <apigee.api>google</apigee.api>
-                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
-                <apigee.apiversion>v1</apigee.apiversion>
-                <!-- apigee.org and apigee.env are passed in via -D flags or env vars -->
-            </properties>
-        </profile>
-    </profiles>
+    <!--
+        Apigee X / Hybrid — eval environment
+        Usage: mvn deploy -P eval -Dapigee.org=YOUR_PROJECT -Dapigee.env=eval
+    -->
+    <profile>
+        <id>eval</id>
+        <properties>
+            <apigee.api>google</apigee.api>
+            <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
+            <apigee.apiversion>v1</apigee.apiversion>
+        </properties>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.6.0</version>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                            <configuration>
+                                <finalName>${project.artifactId}-${project.version}</finalName>
+                                <appendAssemblyId>false</appendAssemblyId>
+                                <descriptors>
+                                    <descriptor>assembly.xml</descriptor>
+                                </descriptors>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
 
     <build>
         <plugins>
