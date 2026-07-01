@@ -39,10 +39,10 @@ jobs:
 
       - name: Deploy to Apigee eval
         run: |
-          mvn deploy -P eval -ntp \
-            -Dapigee.org=${{ secrets.APIGEE_ORG }} \
-            -Dapigee.env=eval \
-            -Dapigee.bearer=${{ env.APIGEE_BEARER_TOKEN }}
+          mvn apigee-enterprise:deploy -P eval -ntp \
+          -Dapigee.org=${{ secrets.APIGEE_ORG }} \
+          -Dapigee.env=eval \
+          -Dapigee.bearer=${{ env.APIGEE_BEARER_TOKEN }}
             
 
       - name: Upload build artifacts
