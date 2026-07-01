@@ -60,7 +60,7 @@
                                 <goal>single</goal>
                             </goals>
                             <configuration>
-                                <finalName>${project.artifactId}-${project.version}</finalName>
+                                <finalName>$helloworld-proxy-${project.version}}</finalName>
                                 <appendAssemblyId>false</appendAssemblyId>
                                 <descriptors>
                                     <descriptor>assembly.xml</descriptor>
