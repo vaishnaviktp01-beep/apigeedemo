@@ -37,6 +37,10 @@ jobs:
           TOKEN=$(gcloud auth print-access-token)
           echo "APIGEE_BEARER_TOKEN=$TOKEN" >> $GITHUB_ENV
 
+      - name: Build Apigee proxy
+        run: |
+          mvn clean package -P eval -ntp
+
       - name: Deploy to Apigee eval
         run: |
           mvn apigee-enterprise:deploy -P eval -ntp \
